@@ -1,0 +1,34 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="logo" routerLink="/">
+      <span class="icon">🎮</span>
+      <span class="brand">GameStore</span>
+    </div>
+
+    <ul class="menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a routerLink="/catalogo" routerLinkActive="active">
+          Catálogo
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contacto" routerLinkActive="active">
+          Contacto
+        </a>
+      </li>
+      <li>
+        <a routerLink="/carrito" routerLinkActive="active" class="carrito-btn">
+          🛒 Carrito 
+          <span class="badge" *ngIf="totalItems > 0">
+            {{ totalItems }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

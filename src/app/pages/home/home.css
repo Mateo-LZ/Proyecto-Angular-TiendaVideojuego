@@ -1,0 +1,47 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.hero h1 span {
+  color: #00ff88;
+}
+
+.btn-primario {
+  background: #00ff88;
+  border: none;
+  color: #000;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primario:hover {
+  transform: scale(1.05);
+  background: #00cc6f;
+}
+
+.destacados {
+  text-align: center;
+}
+
+.destacados h2 {
+  margin-bottom: 1rem;
+  color: #00ff88;
+}

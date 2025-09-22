@@ -1,0 +1,10 @@
+<div class="juego-card">
+  <img [src]="juego?.imagen" alt="{{ juego?.nombre }}">
+  <h3>{{ juego?.nombre }}</h3>
+  <p class="precio">{{ juego?.precio | currency:'USD' }}</p>
+  
+  <button class="btn-agregar" (click)="agregarAlCarrito(juego)">
+    🛒 Agregar
+  </button>
+  
+</div>

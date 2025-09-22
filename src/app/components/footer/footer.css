@@ -1,0 +1,42 @@
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer h3, .footer h4 {
+  color: #00ff88;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #00ff88;
+}
+
+.social a {
+  margin: 0 0.3rem;
+  font-size: 1.4rem;
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: #888;
+}

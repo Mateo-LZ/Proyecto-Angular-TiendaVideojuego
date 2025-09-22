@@ -1,0 +1,32 @@
+<section class="catalogo">
+  <!-- Filtro por plataforma -->
+  <select (change)="filtrarPorCategoria($any($event.target).value)">
+    <option value="">Todas</option>
+    <option value="PlayStation 5">PlayStation 5</option>
+    <option value="Nintendo Switch 2">Nintendo Switch 2</option>
+    <option value="Xbox Series">Xbox Series</option>
+    <option value="Retro PS2/PS3">Retro PS2/PS3</option>
+    <option value="Nintendo 3DS">Nintendo 3DS</option>
+  </select>
+
+  <!-- Ordenar -->
+  <label>Ordenar por:</label>
+  <select (change)="ordenar($any($event.target).value)">
+    <option value="nombre">Nombre</option>
+    <option value="menor">Precio: Menor a Mayor</option>
+    <option value="mayor">Precio: Mayor a Menor</option>
+  </select>
+</section>
+
+<!-- Lista de juegos -->
+@if (juegosFiltrados.length > 0) {
+  <div class="grid-juegos">
+    <!-- ✅ CORREGIR: track por juego.id y asegurar que juego existe -->
+    @for (juego of juegosFiltrados; track juego.id) {
+      <!-- ✅ Asegurarse de pasar la propiedad correctamente -->
+      <app-tarjeta-juego [juego]="juego"></app-tarjeta-juego>
+    }
+  </div>
+} @else {
+  <p>No se encontraron juegos.</p>
+}

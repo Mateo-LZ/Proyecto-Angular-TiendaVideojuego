@@ -1,0 +1,27 @@
+<div class="carrito-contenedor">
+  <h3>🛒 Carrito ({{ totalItems }})</h3> <!-- ✅ Ahora totalItems existe -->
+
+  @if (items.length > 0) {
+    <div class="lista-items">
+      @for (item of items; track item; let i = $index) {
+        <div class="item-carrito">
+          <img [src]="item.imagen" alt="{{ item.nombre }}">
+          <div class="info">
+            <h4>{{ item.nombre }}</h4>
+            <p>Precio: {{ item.precio | currency:'COP' }}</p>
+            <p>Cantidad: {{ item.cantidad || 1 }}</p>
+          </div>
+          <button class="btn-eliminar" (click)="eliminarItem(i)">❌</button>
+        </div>
+      }
+    </div>
+
+    <div class="total">
+      <strong>Total:</strong> {{ total | currency:'COP' }}
+    </div>
+
+    <button class="btn-limpiar" (click)="limpiarCarrito()">🧹 Vaciar Carrito</button>
+  } @else {
+    <p>Carrito vacío 😢</p>
+  }
+</div>

@@ -1,0 +1,40 @@
+<section class="carrito">
+  <h2>🛒 Tu Carrito</h2>
+
+  <!-- Si hay items en el carrito -->
+  <ng-container *ngIf="items.length > 0; else carritoVacio">
+    <div class="lista-items">
+      <div class="item-carrito" *ngFor="let item of items; let i = index">
+        <img [src]="item.imagen" alt="{{ item.nombre }}">
+        <div class="info">
+          <h4>{{ item.nombre }}</h4>
+          <p>Precio: {{ item.precio | currency:'COP' }}</p>
+          <div class="cantidad-control">
+            <label>Cantidad:</label>
+            <input type="number" [value]="item.cantidad || 1" min="1"
+                   (change)="actualizarCantidad(i, $event)">
+          </div>
+          <p>Subtotal: {{ (item.precio * (item.cantidad || 1)) | currency:'COP' }}</p>
+        </div>
+        <button class="btn-eliminar" (click)="eliminarItem(i)">❌ Eliminar</button>
+      </div>
+    </div>
+
+    <div class="total">
+      <strong>Total: {{ total | currency:'COP' }}</strong>
+    </div>
+
+    <button class="btn-limpiar" (click)="limpiarCarrito()">🧹 Vaciar Carrito</button>
+  </ng-container>
+
+  <!-- Si no hay items -->
+  <ng-template #carritoVacio>
+    <p>Tu carrito está vacío 😢</p>
+    <p>¡Visita nuestro catálogo para agregar juegos!</p>
+  </ng-template>
+
+  <div class="acciones">
+    <button class="btn-secundario" routerLink="/catalogo">⬅ Seguir Comprando</button>
+    <button *ngIf="items.length > 0" class="btn-primario" (click)="finalizarCompra()">Finalizar Compra</button>
+  </div>
+</section>

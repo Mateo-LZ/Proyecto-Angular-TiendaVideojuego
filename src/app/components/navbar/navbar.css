@@ -1,0 +1,92 @@
+/* NAVBAR - tema oscuro/neón */
+.navbar {
+  background: #121212; /* fondo oscuro */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* contenedor centrado */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  cursor: pointer;
+  color: #00ff88;
+  font-weight: 800;
+  text-decoration: none;
+}
+.logo .icon { font-size: 1.25rem; }
+.logo .brand { font-size: 1.2rem; }
+
+/* menu */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+/* quitar bullets por si algún estilo global los pone */
+.menu li { margin: 0; padding: 0; }
+
+/* links */
+.menu a {
+  color: #d6d6d6;              /* color visible por defecto */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: color .15s ease, background .15s ease, transform .08s;
+  display: inline-block;
+  opacity: 1;                  /* asegurar que no quede transparente */
+}
+
+/* hover */
+.menu a:hover {
+  color: #00ff88;
+  background: rgba(0,255,136,0.05);
+  transform: translateY(-1px);
+}
+
+/* estado activo (ruta actual) */
+.menu a.active {
+  color: #00ff88;
+  font-weight: 800;
+  box-shadow: inset 0 -3px 0 #00ff88;
+}
+
+/* botón carrito destacado */
+.carrito-btn {
+  background: rgba(0,255,136,0.95);
+  color: #000 !important;
+  padding: 0.45rem 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,255,136,0.08);
+  transition: transform .12s ease;
+}
+.carrito-btn:hover { transform: translateY(-2px); }
+
+/* mobile: menú más compacto */
+@media (max-width: 760px) {
+  .nav-inner { padding: 0.6rem; }
+  .menu { gap: 0.6rem; }
+  .logo .brand { font-size: 1rem; }
+  .carrito-btn { padding: 0.35rem 0.6rem; }
+}
+
+
